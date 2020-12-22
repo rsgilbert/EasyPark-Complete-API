@@ -1,0 +1,3 @@
+# Setup instructions for rememberance
+
+Setup Mongodb using Mongodb atlas. Retrieve the connection mongodb uri and save it in the env as MONGODB_ATLAS_URI
