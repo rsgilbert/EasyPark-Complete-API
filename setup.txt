@@ -1,3 +1,7 @@
 # Setup instructions for rememberance
 
-Setup Mongodb using Mongodb atlas. Retrieve the connection mongodb uri and save it in the env as MONGODB_ATLAS_URI
+Setup Mongodb using Mongodb atlas. Retrieve the connection mongodb uri and save 
+
+To deploy to heroku, declare a Procfile (filename: Procfile), in it  enter: web: yarn dev
+
+Run heroku create, commit your git changes, then run git push heroku main
