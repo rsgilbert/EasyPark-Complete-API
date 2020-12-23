@@ -1,23 +1,39 @@
 const express = require('express')
 const router = express.Router()
-const User = require('../models/user')
-
+const Driver = require('../models/Driver')
+const Park = require('../models/Park')
 const { hashPassword, status } = require('./utils')
 
-router.post('/signup', async (req, res) => {
+router.post('/parksignup', async (req, res) => {
     const { email } = req.body
-    let user = await User.findOne({ email })
-    if(user) {
+    let park = await Park.findOne({ email })
+    if(park) {
         return res.status(status.CONFLICT).end()
     }
     else {
-        user = req.body
-        user.hashedPassword = await hashPassword(user.password)
-        const newUser = await User.create(req.body)
-        console.log(newUser)
-        return res.json(newUser)
+        park = req.body
+        const newPark = await Park.create(req.body)
+        console.log(newPark)
+        return res.json(newPark)
     } 
 })
+
+
+router.post('/driversignup', async (req, res) => {
+    const { email } = req.body
+    let driver = await Driver.findOne({ email })
+    if(park) {
+        return res.status(status.CONFLICT).end()
+    }
+    else {
+        driver = req.body
+        const newDriver = await Driver.create(req.body)
+        console.log(newDriver)
+        return res.json(newDriver)
+    } 
+})
+
+
 
 module.exports = router
 
