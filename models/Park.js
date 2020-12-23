@@ -7,6 +7,7 @@ const parkSchema = mongoose.Schema({
     tel: String,
     lat: Number,
     lng: Number,
+    picture: String
 })
 
 
