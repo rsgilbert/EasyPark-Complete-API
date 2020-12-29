@@ -21,7 +21,7 @@ router.post('/visits', async (req, res) => {
 router.put('/visits/:id', async (req, res) =>  {
     const newDoc = req.body
     console.log(newDoc)
-    await Visit.findByIdAndUpdate(req.params.id, newDoc, (err, doc) => {
+    await Visit.findByIdAndUpdate(req.params.id, newDoc, { new: true }, (err, doc) => {
         if(err) {
             console.error("Failed to find visit: ", err)
             return res.json({})
@@ -29,7 +29,8 @@ router.put('/visits/:id', async (req, res) =>  {
         // const park = await Park.findById(newDoc.parkId)
         // park.count = park.count + 1
         // await Park.findByIdAndUpdate(newDoc.parkId, park)
-        return res.json(newDoc)
+        console.log(doc)
+        return res.json(doc)
     })
 })
 
