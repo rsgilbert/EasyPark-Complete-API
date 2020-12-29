@@ -20,6 +20,7 @@ router.post('/visits', async (req, res) => {
 
 router.put('/visits/:id', async (req, res) =>  {
     const newDoc = req.body
+    console.log(newDoc)
     await Visit.findByIdAndUpdate(req.params.id, newDoc, (err, doc) => {
         if(err) {
             console.error("Failed to find visit: ", err)
