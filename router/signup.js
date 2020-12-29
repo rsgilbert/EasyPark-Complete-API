@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Driver = require('../models/Driver')
 const Park = require('../models/Park')
-const { hashPassword, status } = require('./utils')
+const { status } = require('./utils')
 
 router.post('/parksignup', async (req, res) => {
     const { email } = req.body
