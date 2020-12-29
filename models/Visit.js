@@ -2,10 +2,12 @@ const mongoose = require('mongoose')
 
 const visitSchema = mongoose.Schema({
     parkId: String,
-    numberplate: String,
     start: Number,
     end: Number,
-    complete: Boolean
+    arrived: Boolean,
+    departed: Boolean,
+    parkName: String,
+    driverId: String
 })
 
 

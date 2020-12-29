@@ -22,7 +22,7 @@ router.post('/parksignup', async (req, res) => {
 router.post('/driversignup', async (req, res) => {
     const { email } = req.body
     let driver = await Driver.findOne({ email })
-    if(park) {
+    if(driver) {
         return res.status(status.CONFLICT).end()
     }
     else {

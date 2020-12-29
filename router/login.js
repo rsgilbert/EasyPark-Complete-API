@@ -13,13 +13,17 @@ const { status } = require('./utils')
 
 router.post('/parklogin', async (req, res) => {
     const { email, password } = req.body
-    let park = await Park.findOne({ email, password })
+    console.log(email)
+    console.log(password)
+    let park = await Park.findOne({ email: email, password: password })
     if(park) { 
         return res.json(park)
     } else {
         return res.status(status.NOT_FOUND).end()
     }
 })
+
+
 
 
 router.post('/driverlogin', async (req, res) => {

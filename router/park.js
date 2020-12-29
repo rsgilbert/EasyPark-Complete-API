@@ -18,5 +18,11 @@ router.post('/parks', async (req, res) => {
 })
 
 
+// cleaner route. Deletes unwanted parks
+// router.delete('/parks', async (req, res) => {
+//     await Park.deleteMany({ email: undefined })
+//     return res.json(await Park.find({}))
+// })
+
 // export park-router
 module.exports = router

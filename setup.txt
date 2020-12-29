@@ -3,7 +3,6 @@
 Setup Mongodb using Mongodb atlas. Retrieve the connection mongodb uri and save 
 
 To deploy to heroku, declare a Procfile (filename: Procfile), in it  enter: web: yarn dev
-
 Run heroku create, commit your git changes, then run git push heroku main
 
 Set MONGODB_ATLAS_URI heroku config variable from heroku website page on the gentle-cove-07440 app on the setings page.
